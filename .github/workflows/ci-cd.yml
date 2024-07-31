@@ -59,7 +59,7 @@ jobs:
           echo "${{ env.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_HOST << 'EOF'
-          cd /path/to/your/project
+          cd /home/ubuntu/backend
           git pull origin main
           npm install
           pm2 restart all || pm2 start index.js --name "my-node-app"
