@@ -62,9 +62,9 @@ jobs:
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $SERVER_USER@$SERVER_HOST << 'EOF'
-            cd /path/to/your/project
-            git pull origin main
-            npm install
-            npm run build
-            pm2 restart all || pm2 start index.js --name "my-node-app"
-  EOF
+          cd /path/to/your/project
+          git pull origin main
+          npm install
+          npm run build
+          pm2 restart all || pm2 start index.js --name "my-node-app"
+          EOF
