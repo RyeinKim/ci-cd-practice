@@ -65,6 +65,5 @@ jobs:
           cd /path/to/your/project
           git pull origin main
           npm install
-          npm run build
           pm2 restart all || pm2 start index.js --name "my-node-app"
           EOF
