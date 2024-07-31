@@ -60,6 +60,7 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_rsa -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
           source ~/.bashrc
+          nvm use node
           cd /home/${{ secrets.SERVER_USER }}/backend
           sudo git pull origin main
           npm install
